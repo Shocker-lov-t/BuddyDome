@@ -1,0 +1,257 @@
+{% extends 'bs3.html'  %}
+{% load static %}
+{%block title %}BuddyDome{% endblock%}
+{% block headd %} <script src="https://use.fontawesome.com/148b349946.js"></script>
+<style> /* Features Section */
+. #features {
+
+padding: 7% 15%;
+
+}
+
+.feature-box {
+
+text-align: center; padding: 4.5%;
+
+}
+.icon {
+color:Orange;
+margin-bottom: 1rem;
+
+}
+
+.icon:hover {
+
+color: cyan;
+
+}
+#intro{
+height:auto;
+}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+{% endblock %}
+{% block image_block%}
+
+<header>
+
+  {% block navg %} <div id="intro"> {% endblock %}
+  
+<!--Image and mask--> <div style="padding-right:20%; padding-left:20%;" >
+<img src="static/Images/Buddy Icon 3D Thick Spin.gif"  style="float:right">
+                <h1 class="display-4 font-weight-bold white-text  p-5 mb-2" style="color:#FA8C08; text-align:left; font-size:65px; font-family: 'Stalinist One', cursive;">Rize Above In Cloud Tech  </h1>
+               <h4 class="white-text my-4" style="color:#EEDC05;"> <p style="text-align:left;">"Elevate Your Cloud Knowledge, Anytime, Anywhere." </h4>
+        <div class="row d-flex mt-5 justify-content-center text-center" >
+                 <div class="col" style="text-align:center;">
+                    <a href="{% url 'curriculum:standard_list' %}">  <span class="navbar-text btn btn-outline-warning" style="font-size:30px;
+      font-weight:bold;">Get Started Now</span> </a>
+                  </div>
+                  <div class="col" style="text-align:center;">
+                    <a href="contact">  <span class="navbar-text btn btn-outline-light" style="font-size:30px;
+      font-weight:bold;">Send Feedback</span> </a>
+                  </div>
+             <div class="row d-flex mt-5 justify-content-center text-center" style="height:7rem;">
+                 <div>
+
+
+    <!-- divider -->
+
+
+
+</div>
+</div>
+</header>
+{%endblock%}
+
+{% block content %}
+<main class="mt-2">
+  <div class="container" style="padding-top:2%;">
+    <!-- section 1 for standards-->
+<hr class="my-5" style="color:#ff5722;">
+      <br>
+    <section class="text-center" style="position:static;display:block;">
+                  <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Dive Into Learning</h2>
+                  <!-- class row for description-->
+                  <div class="row d-flex justify-content-center mb-4">
+                    <!-- class column -->
+                    <div class="col-md-8">
+                      <p class="grey-text">Select your Preferred Level and start learning with us!</p>
+                    </div>
+                  </div>
+                  <!-- class row2 for cards -->
+                  <div class="row">
+                          {% for standard in standards %}
+                          <div class="col-md-4 d-flex mb-5 justify-content-center">
+                            <div class="card text-center" style="width: 18rem;">
+                              <div class="card-body" style="">
+                                <h4 class="card-title" style="color:#ff5722;">{{standard.name}}</h4>
+                                <p class="card-text">{{standard.description|truncatechars:75}}</p>
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'curriculum:subject_list' slug=standard.slug %}" class="btn btn-primary" style="background-color:#00bcd4;">Start Learning</a>
+                                {%else%}
+                                <p>Register or login to start learning</p>
+                                <a href="{% url 'user_login' %}" class="btn btn-primary" style="background-color:#00bcd4;">Login</a>
+                                <a href="{% url 'register' %}" class="btn btn-primary" style="background-color:#00bcd4;">Register</a>
+                                {%endif%}
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                  </div>
+    </section>
+
+
+       <hr class="my-5" style="color:#ff5722;">
+  </div>
+<!-- section 3 for activities -->
+    <section id="features">
+<div class="row">
+<div class="feature-box col-lg-4">
+<i class="icon fa fa-laptop fa-5x"></i> <h3>Specialized Courses.</h3>
+<p>Unlock Your Potential,Master Your Craft</p>
+</div>
+
+
+<div class="feature-box col-lg-4">
+
+<i class="icon fa fa-book fa-5x"></i>
+
+<h3>HandBooks</h3>
+
+<p>A Step Ahead with Knowledge</p>
+
+</div>
+
+
+
+
+<div class="feature-box col-lg-4">
+
+<i class="icon fa  fa-flask fa-5x"></i>
+
+<h3>Practical Guides</h3>
+
+<p>Solve Problems,Get Results</p>
+
+</div>
+
+</div>
+        <div class="row">
+<div class="feature-box col-lg-4">
+<i class="icon fa fa-paste fa-5x"></i> <h3>Community Blogs</h3>
+<p>A Place for Voices,A Space for Community</p>
+</div>
+
+
+<div class="feature-box col-lg-4">
+
+<i class="icon fa fa-bullseye fa-5x"></i>
+
+<h3>Community Events</h3>
+
+<p>Join the Movement, Make a Difference</p>
+
+</div>
+
+
+
+
+<div class="feature-box col-lg-4">
+
+<i class="icon fa fa-comments fa-5x"></i>
+
+<h3>Community Connect</h3>
+
+<p>Uniting People, Empowering Community</p>
+
+</div>
+
+</div>
+
+
+
+</section>
+    <hr class="my-5" style="color:#ff5722;">
+<!-- section 3 for activities -->
+
+    <section class="text-center full-width container-fluid" id="event-section">
+        <br>
+            <h2 class="mb-3 mt-5 font-weight-bold" style="color:#ff5722;">Upcoming Events</h2>
+            <div class="row d-flex justify-content-center mb-4">
+                <div class="col-md-8">
+                  <p class="text-white"></p>
+                </div>
+              </div>
+            <div class="row d-flex justify-content-center mb-4">
+              <!-- col for event 1 -->
+                            <div class="card mb-3 mr-5 ml-3" style="max-width:450px;max-height:450px;">
+                                <img src="static/Images/Event 1 AWS.png" alt="no image found" >
+                                <div class="event-mask justify-content-center">
+                                  <div class="row d-flex justify-content-center"> <h2 class="font-weight-bold" style="color:#919290 ;">About the Event</h2> </div>
+                                  <div class="row d-flex justify-content-center">
+                                    <div class="col">
+
+                                      </div>
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+                                     <a href="https://learn.pravinmishra.in/aws-career-kickstart-program" class="btn btn-primary mb-3" style="background-color:#919290 ;">Get Details</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <!--col for event 2  -->
+                            <div class="card mb-3 mr-5 ml-3" style="max-width: 450px;max-height:450px;">
+                                <img src="static/Images/avast-event-square.jpg" alt="no image found" width="450" height="450">
+                                <div class="event-mask">
+                                  <div class=""> <h2 class="font-weight-bold" style="color:#919290 ;">About the Event</h2> </div>
+                                  <div class="row d-flex justify-content-center">
+                                      <div class="col">/p>
+                                        </div>
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+                                     <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fglasgowchamberofcommerce.com%2Fnews%2Fnews%2F2022%2Fapril%2F05%2Fthe-future-of-the-workplace-for-smes-digital-transformation%2F&psig=AOvVaw1ZrLkRTlwk5mQhyqTZrr1x&ust=1673621929846000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOiK4NalwvwCFQAAAAAdAAAAABAJ" class="btn btn-primary mb-3" style="background-color:#919290  ;">Get Details</a>
+                                   </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+                            <!-- button to get all activities -->
+                <div class="row d-flex justify-content-center mt-5 mb-3">
+                    <!--<a href="{% url 'user_login' %}" class="btn btn-primary mb-4" style="background-color:#ff5722;">See All Events</a>  -->
+            </div>
+    </section>
+      <hr class="my-5" style="color:#ff5722;">
+    <!-- Section 2: Contributor Members -->
+
+    <section class="text-center">
+      <h2 class="mb-5 font-weight-bold" style="color:#ff5722;">Meet Our Contributors</h2>
+      <div class="row d-flex justify-content-center mb-4">
+          <div class="col-md-8">
+            <p class="grey-text">Following are our Contributor members.</p><br>
+          </div>
+          <div class="row d-flex justify-content-center mb-3">
+          {% for contributor in contributors %}
+          <div class="card mb-3 mr-5 ml-3" style="max-width: 500px;">
+            <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{{ contributor.profile_pic.url|default_if_none:'#' }}" class="card-img" alt="No image found">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title" style="color:#ff5722;">{{contributor.user.username}}</h5>
+                          <p class="card-text">{{contributor.bio|truncatechars:75}}</p>
+                          <p class="card-text"><small class="text-muted"></small></p>
+                        </div>
+                      </div>
+            </div>
+            </div>
+          {% endfor %}
+          </div>
+      </div>
+    </section>
+  <hr class="my-5" style="color:#ff5722;">
+</main>
+
+
+{%endblock%}

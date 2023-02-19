@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Event {% endblock %}
+{% block headd %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+</style>
+{% endblock %}
+
+{% block image_block %}
+<header class="info-header">
+  <div id="page-intro" class="container-fluid d-flex align-items-center justify-content-center ">
+    <div class="row d-flex justify-content-center text-center">
+      <div class="col-md-12 text-white">
+        <!-- heading -->
+        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > EVENTS </h2>
+        <div class="row d-flex justify-content-center text-center">
+          <ul class="breadcrumb">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'testa:community' %}">Community</a></li>
+            <li class="disabled-text"><a href="{% url 'testa:test1' }">Event</a></li>
+          </ul>
+        </div>
+
+        <!-- divider -->
+        <hr style="color:#ff5722;">
+
+        <!-- description -->
+        <h4 class="white-text my-4" style="margin:10% 20%;">If you want to attend Events that will add value to your professional growth, there are many ways for you to find Events that may interest you. Here are some:</h4>
+  </div></div></div>
+</header>
+{% endblock %}
+
+{% block content %}
+<!-- section 1 for standards-->
+
+<section id="best-features" class="text-center" >
+              <h2 class="mb-5 mt-5 font-weight-bold" style="color:#ff5722;">Upcoming Events...</h2>
+              <!-- class row for description-->
+
+
+{% for i in events %}
+    <a href="{{i.Link}}" style="text-decoration:none; ">
+          <div class="flip-card" style="margin-bottom:5%;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{{i.im.url|default_if_none:'#' }}" alt="No Event Image Available Flip To see" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h2 style="font-family:'Itim', cursive;">{{i.name}}</h2>
+      <p style="font-family:'Itim', cursive;padding-right:30px;padding-left:30px;"  >{{i.description}}</p>
+    </div>
+  </div>
+</div>
+    </a>
+{% endfor %}
+
+
+
+
+</section>
+
+{%endblock%}
+
+
+

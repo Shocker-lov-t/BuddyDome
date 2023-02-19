@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>{%block title%}{%endblock%}</title>
+      {%block headd%}{%endblock%}
+      <link rel="icon" href="{% static 'Buddy Icon.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'css/mota.css' %}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+      <script src="https://use.fontawesome.com/148b349946.js"></script>
+      <style>
+      .nav-item {
+      font-size:140%;
+      font-weight:bold;
+      padding-right:20px;
+      padding-bottom:4.5%;
+     width:auto;}
+    </style>
+ <style>/* FOOTER */
+.footer {
+	width: 100%;
+	background: #00121b;
+	display: block;
+ }
+
+ .inner-footer {
+	 width: 95%;
+	 margin: auto;
+	 padding: 30px 10px;
+	 display: flex;
+	 flex-wrap: wrap;
+	 box-sizing: border-box;
+	 justify-content: center;
+ }
+
+.footer-items {
+	width: 25%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.footer-items p {
+	font-size: 16px;
+	text-align: justify;
+	line-height: 25px;
+	color: #fff;
+}
+
+.footer-items h1 {
+	color: #fff;
+}
+
+.border1 {
+	height: 3px;
+	width: 40px;
+	background: #ff9800;
+	color: #ff9800;
+	background-color: #ff9800;
+	border: 0px;
+}
+
+ul {
+	list-style: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+ }
+
+ul a {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	transition: 0.3s;
+}
+
+ul a:hover {
+	color: #ff9800;
+}
+
+ul li {
+	margin: 10px 0;
+	height: 25px;
+}
+
+li i {
+	margin-right: 20px;
+}
+
+.social-media {
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+
+.social-media a {
+	text-decoration: none;
+}
+
+.social-media i {
+	height: 25px;
+	width: 25px;
+	margin: 20px 10px;
+	padding: 4px;
+	color: #fff;
+	transition: 0.5s;
+}
+
+.social-media i:hover {
+	transform: scale(1.5);
+}
+
+.footer-bottom {
+	padding: 10px;
+	background: #00121b;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
+/* for tablet mode view */
+
+@media screen and (max-width: 1275px) {
+	.footer-items {
+		width: 50%;
+	}
+}
+
+/* for mobile screen view */
+
+@media screen and (max-width: 660px) {
+	.footer-items {
+		width: 100%;
+	}
+
+	h2{
+font-family: 'Press Start 2P', cursive;
+}
+}</style>
+  </head>
+  <body>
+    <!-- navigation bar -->
+           <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong " style="position:relative; background:#00121b">
+
+        <a class="navbar-brand" href="{% url 'index' %}" style="padding-left:3%;padding-top:1.2%;">
+          <img src="{% static 'Images\a.png' %}" width="290px" height="65px;" alt="">
+        </a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          {% if user.is_authenticated %}
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Community
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
+              <a class="dropdown-item" href="{% url 'testa:test2' %}">Blogs</a>
+              <a class="dropdown-item" href="{% url 'testa:event' %}">Events</a>
+              <div class="dropdown-divider" ><hr></div>
+
+              <a class="dropdown-item" href="{% url 'testa:community' %}">more features</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'curriculum:standard_list' %}">Curriculum</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'testa:test1' %}">GuideBuddy</a>
+          </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown2" style="">
+              <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+              <div class="dropdown-divider" ><hr></div>
+
+              <a class="dropdown-item" href="{% url 'change_pass' %}">Change Password</a>
+            </div>
+          </li>
+            {% endif %}
+
+
+
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+            {% if user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+
+           {%endif%}
+
+
+        </ul>
+        {% if user.is_authenticated %}
+
+        <span class="navbar-text btn btn-outline-danger" style="margin-right:3%;margin-top:1%;font-size:20px;
+      font-weight:bold;" >
+          <a href ="{% url 'user_logout' %}" >Logout </a>
+        </span>
+        {% else %}
+        <span class="navbar-text btn btn-outline-primary" style="margin-right:20px;font-size:20px;margin-top:1%;
+      font-weight:bold;">
+         <a href ="{% url 'user_login' %}" >Sign in </a>
+        </span>
+        <span class="navbar-text btn btn-outline-success" style="margin-right:3%;font-size:20px;margin-top:1%;
+      font-weight:bold;">
+            <a href ="{% url 'register' %}" >Sign up </a>
+        </span>
+        {% endif %}
+      </div>
+    </nav>
+          {% block image_block %}
+          {% endblock %}
+
+
+    <div class="container">
+        {%block content%}
+
+        {%endblock%}
+    </div>
+{% block cont %} {%endblock%}
+
+
+   <!--  FOOTER START -->
+
+<div class="footer">
+  <div class="inner-footer">
+
+<!--  for company name and description -->
+      <div class="footer-items">
+      <h2 style="font-family: 'Montserrat', sans-serif;" >BuddyDome</h2>
+      <p>Experience A new way to CLOUDS</p>
+<img src="{% static 'Images/slowmove2.gif' %}">
+    </div>
+
+
+<!--  for quick links  -->
+    <div class="footer-items">
+      <h3>Group Members</h3>
+      <div class="border1"></div> <!--for the underline -->
+        <ul>
+          <a href="#"><li>Ananta Paliwal</li></a>
+          <a href="#"><li>Bromhon Baasudev Jena</li></a>
+          <a href="#"><li>Ayush Vyas</li></a>
+          <a href="#"><li>Tapas Singhal</li></a>
+          <a href="#"><li>Khushboo Choubey</li></a>
+
+        </ul>
+    </div>
+
+    <!--  for contact us info -->
+    <div class="footer-items">
+      <h3>Contact us</h3>
+      <div class="border1"></div>
+        <ul>
+          <li><i class="fa fa-map-marker" aria-hidden="true"></i>VIT BHOPAL UNIVERSITY</li>
+
+          <li><i class="fa fa-phone" aria-hidden="true"></i>+917751902555,+919719548967</li>
+          <li><i class="fa fa-envelope" aria-hidden="true"></i>samudrawala@gmail.com</li>
+          <li><i class="fa fa-envelope" aria-hidden="true"></i>tapaslov@gmail.com</li>
+        </ul>
+
+
+
+<!--   for social links -->
+        <div class="social-media" style="left:50px;" >
+          <a style="padding-left:40px;" href="https://www.instagram.com/its_tapas_ig/"><i class="fa fa-instagram fa-2x"></i></a>
+          <a style="padding-left:10%;" href="https://www.linkedin.com/in/tapas-singhal-b1380521a/"><i class="fa fa-linkedin fa-2x"></i></a>
+          <a style="padding-left:10%;" href="https://twitter.com/TapasLov"><i class="fa fa-twitter fa-2x"></i></a>
+        </div>
+    </div>
+  </div>
+
+<!--   Footer Bottom start  -->
+  <div class="footer-bottom">
+   <h3>Copyright &copy; BuddyDome 2023.</h3>
+  </div>
+</div>
+
+<!--   Footer Bottom end -->
+
+<!--   FOOTER END -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+
+<!-- Thanks to Computer Conversations -->
+<!-- END OF FOOTER -->
+
+<!-- Thanks to Computer Conversations -->
+</html>

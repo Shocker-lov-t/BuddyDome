@@ -16,9 +16,9 @@ Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in 
 
 Step-2: (Follow only if you are working with BuddyDome with s3 only otherwise ignore this step) Setting up S3 bucket 
 
-        -Create an s3 bucket ( with unchecking the box of " Block all public access" )
-        -Change the bucket policy as follows
-              >>> //S3 Policy//
+  Create an s3 bucket ( with unchecking the box of " Block all public access" )
+  Change the bucket policy as follows
+   //S3 Policy//
 
     {
         "Version": "2012-10-17",
@@ -33,15 +33,17 @@ Step-2: (Follow only if you are working with BuddyDome with s3 only otherwise ig
         ]
     } 
     
-        -Create an IAM user
+   Create an IAM user
+          
             >>>In AWS Look for IAM service 
             >>>Create an IAM user with S3 Policy
             >>>Generate Access key and secret key and note them down
 
-        -Go to your Django project and first install two libraries using following command 
-              >>>pip install boto3 django-storages
+   Go to your Django project and first install two libraries using following command 
+             
+             pip install boto3 django-storages
               
-        -Add Following in settings.py file
+   Add Following in settings.py file
         
               import boto3
               from storages.backends.s3boto3 import S3Boto3Storage
@@ -76,14 +78,14 @@ Step-2: (Follow only if you are working with BuddyDome with s3 only otherwise ig
               STATIC_ROOT = "https://s3.amazonaws.com/my-static-bucket/"
               MEDIA_ROOT = "https://s3.amazonaws.com/my-media-bucket/"
          
-         -Some Changes in all urls.py file
-              //urls.py//
+   Some Changes in all urls.py file
+    //urls.py//
 
               from Buddy import settings
               from django.conf.urls.static import static
               
-
-               //In URL_patterns ending Square bracket Add below code as it is//
+   //In URL_patterns ending Square bracket Add below code as it is//
+  
                +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 Step-3: Setting up Load Balanacing ( Compulsory in Both)

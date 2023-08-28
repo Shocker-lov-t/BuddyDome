@@ -4,7 +4,7 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in both )
         
         -Login to AWS console and head toward for RDS Service
-        -Launch an Postgresql Database instance and note down the username,master username and passwordof the instance ( it will be shown one time only so make sure to note            them down very carefully)
+        -Launch an Postgresql Database instance and note down the username,master username and password of the instance ( it will be shown one time only so make sure to note them down very carefully)
         -Wait for the database instance to be in running state ( Takes approximately 10 min)
         -After Launched, click on the instance and it will show the details of your database
         -Open Django project's Settings.py file, there you will see a section "DATABASE" IN LINE 85 

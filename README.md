@@ -121,7 +121,7 @@ Step-3: Setting up Load Balanacing ( Compulsory in Both)
 
         client_max_body_size 400M;        
 
->  > In terminal initialize the application for elasticbeanstalk using awsebcli
+>  > In terminal initialize the application for elasticbeanstalk using awsebcli <br>
 >  > Make sure you are in main directory where you can access manage.py file ( Use dir or ls command to verify)
 
         eb init -i

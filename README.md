@@ -1,4 +1,8 @@
 # buddydome
+
+<img width="306" alt="newlogo" src="https://github.com/Shocker-lov-t/buddydome/assets/98687345/dc56b60b-5fab-45e1-a5df-a6ecb0563662">
+
+
 Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, RDS, S3 Bucket and Route53
 
 # Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in both )

@@ -1,6 +1,7 @@
 # buddydome
 <div align="center">
-<img width="306" alt="newlogo" src="https://github.com/Shocker-lov-t/buddydome/assets/98687345/dc56b60b-5fab-45e1-a5df-a6ecb0563662">
+        <img width="306" alt="newlogo" src="https://github.com/Shocker-lov-t/buddydome/assets/98687345/ff41be25-ff70-4880-adf7-7a0c9df5f33d">
+
 </div>
 
 Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, RDS, S3 Bucket and Route53

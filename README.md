@@ -1,7 +1,7 @@
 # buddydome
 Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, RDS, S3 Bucket and Route53
 
-<h1>Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in both )</h1>
+# Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in both )
         
         -Login to AWS console and head toward for RDS Service
         -Launch an Postgresql Database instance and note down the username,master username and password of the instance ( it will be shown one time only so make sure to note them down very carefully)
@@ -14,7 +14,7 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
               >>> Change Host to new host which is shown exactly on aws console database instance page
         -SAVE CHANGES
 
-<h1>Step-2: (Follow only if you are working with BuddyDome with s3 only otherwise ignore this step) Setting up S3 bucket </h1>
+# Step-2: (Follow only if you are working with BuddyDome with s3 only otherwise ignore this step) Setting up S3 bucket
 
   >>Create an s3 bucket ( with unchecking the box of " Block all public access" ) <br>
   >>Change the bucket policy as follows <br>
@@ -90,7 +90,7 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 
 
 
-<h1>Step-3: Setting up Load Balanacing ( Compulsory in Both)</h1>
+# Step-3: Setting up Load Balanacing ( Compulsory in Both)
 
 >  > Install Elastic Beansrtalk CLI using following:-
 

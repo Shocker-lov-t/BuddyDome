@@ -7,8 +7,8 @@ Result:- <a href="www.buddydome.cloud"> www.buddydome.cloud </a>
 </div>
 
 Highly Available Django Application implemented using Blue/Green deployment on AWS Elastic Beanstalk resulting in a seamless 
-deployment process and enabling cloud enthusiasts to share and access learning resources.
-<br>Technology: AWS, Django, HTML/CSS, JavaScript, PostgreSQL
+deployment process and enabling cloud enthusiasts to share and access learning resources.<br>
+<br>Technology: AWS, Django, HTML/CSS, JavaScript, PostgreSQL<br>
 <br> Major AWS Services used :- <ul type="square">
 <li>RDS</li>
 <li>S3</li>

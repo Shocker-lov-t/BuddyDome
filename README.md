@@ -163,17 +163,19 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 <li>Go to Route53 and create a "Hosted Zone" with corresponding Hostinger domain name ( e.g. buddydome.cloud) </li>
 <li>Change Hostinger Nameservers to Route53 Generated Nameservers (changes might take upto 24hr)</li>
 <li>In Hosted Zone, create a "A" type Record <br>
-> Leave Subdomain as blank
-> Toggle "Alias"
-> In Endpoint, choose Alias to "Elastic Beanstalk environment"
-> CHoose Corresponding Region, ap-south-1 "Asia Pacific (Mumbai)"    
-> Choose Environment, select the corresponding elasticbeanstalk environment that directs to Buddydome Project
+        <ul>
+<li>Leave Subdomain as blank</li>
+<li>Toggle "Alias"</li>
+<li>In Endpoint, choose Alias to "Elastic Beanstalk environment"</li>
+<li>CHoose Corresponding Region, ap-south-1 "Asia Pacific (Mumbai)" </li>   
+<li>Choose Environment, select the corresponding elasticbeanstalk environment that directs to Buddydome Project</li>
 <br>
 >  > Click "Add another record" <br>
-        > write "www" in subdomain
-        > Choose Type as "CNAME"
-        > In Value write original domain i.e. buddydome.cloud
+       <li> > write "www" in subdomain</li>
+       <li> > Choose Type as "CNAME"</li>
+       <li> > In Value write original domain i.e. buddydome.cloud</li>
 <br>
-> Click "Create Records"
+<li> Click "Create Records" </li>
+        </ul>
 </li>
 </OL>

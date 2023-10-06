@@ -97,9 +97,9 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 
 
 
-# Step-3: Setting up Load Balanacing ( Compulsory in Both)
+# Step-3: Deployment Using AWS Elastic Beanstalk( Compulsory in Both)
 
->  > Install Elastic Beansrtalk CLI using following:-
+>  > Install Elastic Beanstalk CLI using following:-
 
          pip install awsebcli
 
@@ -158,3 +158,22 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 
         ed deploy
 
+# Step-3: Setting Up DNS (Route53 and Hostinger)
+<OL>
+<li>Go to Route53 and create a "Hosted Zone" with corresponding Hostinger domain name ( e.g. buddydome.cloud) </li>
+<li>Change Hostinger Nameservers to Route53 Generated Nameservers (changes might take upto 24hr)</li>
+<li>In Hosted Zone, create a "A" type Record <br>
+> Leave Subdomain as blank
+> Toggle "Alias"
+> In Endpoint, choose Alias to "Elastic Beanstalk environment"
+> CHoose Corresponding Region, ap-south-1 "Asia Pacific (Mumbai)"    
+> Choose Environment, select the corresponding elasticbeanstalk environment that directs to Buddydome Project
+<br>
+>  > Click "Add another record" <br>
+        > write "www" in subdomain
+        > Choose Type as "CNAME"
+        > In Value write original domain i.e. buddydome.cloud
+<br>
+> Click "Create Records"
+</li>
+</OL>

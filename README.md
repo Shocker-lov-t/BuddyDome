@@ -170,10 +170,10 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
 <li>CHoose Corresponding Region, ap-south-1 "Asia Pacific (Mumbai)" </li>   
 <li>Choose Environment, select the corresponding elasticbeanstalk environment that directs to Buddydome Project</li>
 <br>
->  > Click "Add another record" <br>
-       <li> > write "www" in subdomain</li>
-       <li> > Choose Type as "CNAME"</li>
-       <li> > In Value write original domain i.e. buddydome.cloud</li>
+Click "Add another record" <br>
+       <li> > > Write "www" in subdomain</li>
+       <li> > > Choose Type as "CNAME"</li>
+       <li> > > In Value write original domain i.e. buddydome.cloud</li>
 <br>
 <li> Click "Create Records" </li>
         </ul>

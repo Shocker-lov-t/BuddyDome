@@ -6,7 +6,16 @@ Result:- <a href="www.buddydome.cloud"> www.buddydome.cloud </a>
 
 </div>
 
-Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, RDS, S3 Bucket and Route53
+Highly Available Django Application implemented using Blue/Green deployment on AWS Elastic Beanstalk resulting in a seamless 
+deployment process and enabling cloud enthusiasts to share and access learning resources.
+<br>Technology: AWS, Django, HTML/CSS, JavaScript, PostgreSQL
+<br> Major AWS Services used :- <ul type="square">
+<li>RDS</li>
+<li>S3</li>
+<li>ELASTICBEANSTALK</li>
+<li>ROUTE53</li>
+
+</ul>
 
 # Step-1: Create an AWS database instance of postgreSql database  ( Compulsory in both )
         
@@ -156,9 +165,9 @@ Highly Available Django Application deployed using AWS Elastic Beanstalk, EC2, R
         eb open
 >  > Use the following only in case you make some changes after environment creation
 
-        ed deploy
+        eb deploy
 
-# Step-3: Setting Up DNS (Route53 and Hostinger)
+# Step-4 : Setting Up DNS (Route53 and Hostinger)
 <OL>
 <li>Go to Route53 and create a "Hosted Zone" with corresponding Hostinger domain name ( e.g. buddydome.cloud) </li>
 <li>Change Hostinger Nameservers to Route53 Generated Nameservers (changes might take upto 24hr)</li>
@@ -179,3 +188,6 @@ Click "Add another record" <br>
         </ul>
 </li>
 </OL>
+<br>
+<br>
+<i>With this your application has been successfully deployed and hosted with a Domain</i>

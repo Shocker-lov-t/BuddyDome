@@ -2,7 +2,7 @@
 <div align="center">
         <img width="306" alt="newlogo" src="https://github.com/Shocker-lov-t/buddydome/assets/98687345/ff41be25-ff70-4880-adf7-7a0c9df5f33d">
         
-Result:- <a href="www.buddydome.cloud"> www.buddydome.cloud </a>
+
 
 </div>
 
